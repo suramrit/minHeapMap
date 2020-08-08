@@ -2,6 +2,11 @@ package minheapmap
 
 import "container/heap"
 
+// The Interface type describes the requirements
+// for a type using the routines in this package.
+// Any type that implements it may be used as a
+// min-heap with the keys stored in a map
+
 type Interface interface {
 	heap.Interface
 	//Remove an element from the corresponding Map for the heap entries
@@ -14,6 +19,7 @@ type Interface interface {
 	GetKey(x interface{}) int
 }
 
+//Decreate the value associated with the key in the <key,value> tuple
 func Decrease(h Interface, k interface{}) {
 	p := h.GetKey(k)
 	if !down(h, p, h.Len()) {
@@ -21,11 +27,15 @@ func Decrease(h Interface, k interface{}) {
 	}
 }
 
+// Push pushes the element x onto the heap.
+// The complexity is O(log n) where n = h.Len().
+// Push() is for the interface to call and should be used to add keys to the heap
 func Push(h Interface, x interface{}) {
 	h.Push(x)
 	up(h, h.Len()-1)
 }
 
+// Pop removes and returns the minimum element (according to Less) from the heap.
 func Pop(h Interface) interface{} {
 	n := h.Len() - 1
 	h.Remove(h.GetElem(0))
