@@ -9,7 +9,7 @@ import (
 
 //Using a MinHeap with O(1) Lookup for an implementation of the Djikstras algo for minimum cost spanning path.
 //Example used is same as in : https://livebook.manning.com/book/grokking-algorithms/chapter-7/
-//For this Example, No Copyright violation was intended for educational purposes onyl
+//For this Example, No Copyright violation was intended and is intended for educational and reference purposes only
 type node struct {
 	name       string        //ID of the node
 	neighbours map[*node]int // indicates a directed edge from the node to the neighbour
