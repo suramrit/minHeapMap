@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/djikstras/minheapmap"
+	"github.com/suramrit/minheapmap"
 )
 
 //Using a MinHeap with O(1) Lookup for an implementation of the Djikstras algo for minimum cost spanning path.
